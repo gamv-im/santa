@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Antonella</title>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #000; height: 100vh; display: flex; justify-content: center; align-items: center; overflow: hidden; }
+  video { width: 100%; height: 100%; object-fit: contain; }
+  .sonido {
+    position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+    background: white; color: black; border: none;
+    padding: 12px 20px; border-radius: 50px; font-size: 16px; font-weight: bold;
+    z-index: 10; cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+  <video id="video" autoplay muted playsinline loop controls src="antonella.mp4"></video>
+
+  <button class="sonido" id="btnSonido" onclick="activarSonido()">🔊 Activar Sonido</button>
+
+  <script>
+    function activarSonido() {
+      var v = document.getElementById('video');
+      v.muted = false;
+      v.play();
+      document.getElementById('btnSonido').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
